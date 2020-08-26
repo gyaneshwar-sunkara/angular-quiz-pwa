@@ -1,0 +1,19 @@
+{
+  "name": "angular-quiz-pwa",
+  "version": "0.2.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "debug": "~2.6.9",
+    "dotenv": "^8.2.0",
+    "express": "~4.16.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.9.25",
+    "morgan": "~1.9.1"
+  },
+  "author": "Gyani Sunkara",
+  "license": "MIT"
+}
