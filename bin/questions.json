@@ -1,0 +1,102 @@
+[
+  {
+    "id": 1,
+    "question": "Nobel prize is awarded for which of the following disciplines",
+    "1": "Literature, peace and economics",
+    "2": "Medicine or Physiology",
+    "3": "Chemistry and Physics",
+    "4": "All the above",
+    "answer": 4,
+    "tag": "Basic General Knowledge"
+  },
+  {
+    "id": 2,
+    "question": "Garampani Sanctuary is locate in which of the following places",
+    "1": "Junagarh, Gujarat",
+    "2": "Kohima, Nagaland",
+    "3": "Diphu, Assam",
+    "4": "Gangtok, Sikkim",
+    "answer": 3,
+    "tag": "Basic General Knowledge"
+  },
+  {
+    "id": 3,
+    "question": "Entomology studies what?",
+    "1": "Human beings",
+    "2": "Insects",
+    "3": "The origin and history of technical and scientific terms",
+    "4": "The formation of rocks",
+    "answer": 2,
+    "tag": "Basic General Knowledge"
+  },
+  {
+    "id": 4,
+    "question": "Galileo was an astronomer who",
+    "1": "Developed the telescope",
+    "2": "Discovered four satellites of Jupiter",
+    "3": "Discovered that the movement of pendulum produces a regular time measurement",
+    "4": "All the above",
+    "answer": 2,
+    "tag": "Basic General Knowledge"
+  },
+  {
+    "id": 5,
+    "question": "Sun exposure can bring about an improvement in health because of which of the following reasons",
+    "1": "The infrared light kills bacteria in the body",
+    "2": "Resistance increases",
+    "3": "The pigment cells in the skin get stimulated and produce a healthy tan",
+    "4": "The ultraviolet rays convert skin oil into Vitamin D",
+    "answer": 4,
+    "tag": "Basic General Knowledge"
+  },
+  {
+    "id": 6,
+    "question": "Who is the father of geometry?",
+    "1": "Aristotle",
+    "2": "Euclid",
+    "3": "Pythagoras",
+    "4": "Kepler",
+    "answer": 2,
+    "tag": "Famous Personalities"
+  },
+  {
+    "id": 7,
+    "question": "The radioactive element radium was invented by which of the following scientists?",
+    "1": "Marie Curie",
+    "2": "Benjamin Franklin",
+    "3": "Albert Einstein",
+    "4": "Isaac Newton",
+    "answer": 1,
+    "tag": "Inventions"
+  },
+  {
+    "id": 8,
+    "question": "In which field is the B.C. Roy Award given?",
+    "1": "Environment",
+    "2": "Journalism",
+    "3": "Medicine",
+    "4": "Music",
+    "answer": 3,
+    "tag": "Honors and Awards"
+  },
+  {
+    "id": 9,
+    "question": "Who authored the ‘Forbidden Verses’?",
+    "1": "D.H. Lawrence",
+    "2": "Salman RushDie",
+    "3": "Ms. Taslima Nasrin",
+    "4": "Abu Nuwas",
+    "answer": 4,
+    "tag": "Books and Authors"
+  },
+  {
+    "id": 10,
+    "question": "Who played the role of Jack Sully in Avatar?",
+    "1": "D.H. Lawrence",
+    "2": "Sam Worthington",
+    "3": "Ms. Taslima Nasrin",
+    "4": "Abu Nuwas",
+    "answer": 2,
+    "tag": "Movies"
+  }
+]

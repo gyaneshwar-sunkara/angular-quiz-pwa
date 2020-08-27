@@ -18,6 +18,7 @@ process.env.NODE_ENV === "development" ? app.use(logger("dev")) : null;
  */
 app.use("/api/auth", require("./routes/api/auth"));
 app.use("/api/users", require("./routes/api/users"));
+app.use("/api/questions", require("./routes/api/questions"));
 
 /**
  * Static Assets
