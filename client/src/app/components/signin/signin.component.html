@@ -1,1 +1,28 @@
-<p>signin works!</p>
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm.value)">
+  <div class="form-group mb-3">
+    <label>Email Address</label>
+    <input
+      type="email"
+      formControlName="email"
+      class="form-control"
+      aria-describedby="emailHelp"
+    />
+    <small id="emailHelp" class="form-text text-muted">
+      We'll never share your email with anyone else.
+    </small>
+  </div>
+  <div class="form-group mb-3">
+    <label>Password</label>
+    <input
+      type="password"
+      formControlName="password"
+      class="form-control"
+      aria-describedby="passwordHelp"
+    />
+    <small id="passwordHelp" class="form-text text-muted">
+      <span style="color: blue">Forgot password?</span> is not available at the
+      moment
+    </small>
+  </div>
+  <input type="submit" class="btn btn-primary mb-3" value="Submit" />
+</form>

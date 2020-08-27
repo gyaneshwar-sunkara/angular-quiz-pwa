@@ -56,7 +56,7 @@
           routerLink="/instructions"
           routerLinkActive="active"
           [routerLinkActiveOptions]="{ exact: true }"
-          >instructions</a
+          >Instructions</a
         >
         <a
           class="nav-item nav-link text-center mb-1"
@@ -65,15 +65,14 @@
           [routerLinkActiveOptions]="{ exact: true }"
           >About</a
         >
+        <button
+          (click)="logout()"
+          *ngIf="userService.loggedIn()"
+          class="btn btn-danger mt-1 ml-1"
+        >
+          Logout
+        </button>
       </div>
     </div>
   </div>
 </nav>
-
-<button
-  (click)="logout()"
-  *ngIf="userService.loggedIn()"
-  class="btn btn-danger m-5 float-right"
->
-  Logout
-</button>
