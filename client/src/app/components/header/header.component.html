@@ -1,1 +1,79 @@
-<p>header works!</p>
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" routerLink="/">
+      <img
+        src="favicon.ico"
+        width="30"
+        height="30"
+        class="d-inline-block align-top"
+        alt="logo"
+      />
+      Angular Quiz PWA</a
+    >
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div
+      class="collapse navbar-collapse justify-content-end"
+      id="navbarNavAltMarkup"
+    >
+      <div class="navbar-nav mt-1">
+        <a
+          class="nav-item nav-link text-center mb-1"
+          *ngIf="!userService.loggedIn()"
+          routerLink="/"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          >Login</a
+        >
+        <a
+          class="nav-item nav-link text-center mb-1"
+          *ngIf="!userService.loggedIn()"
+          routerLink="/signup"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          >Register</a
+        >
+        <a
+          class="nav-item nav-link text-center mb-1"
+          *ngIf="userService.loggedIn()"
+          routerLink="/dashboard"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          >Dashboard</a
+        >
+        <a
+          class="nav-item nav-link text-center mb-1"
+          *ngIf="userService.loggedIn()"
+          routerLink="/instructions"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          >instructions</a
+        >
+        <a
+          class="nav-item nav-link text-center mb-1"
+          routerLink="/about"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          >About</a
+        >
+      </div>
+    </div>
+  </div>
+</nav>
+
+<button
+  (click)="logout()"
+  *ngIf="userService.loggedIn()"
+  class="btn btn-danger m-5 float-right"
+>
+  Logout
+</button>
