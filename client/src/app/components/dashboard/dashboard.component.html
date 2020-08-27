@@ -1,28 +1,58 @@
-<div class="d-flex justify-content-center">
+<div class="d-flex justify-content-center" *ngIf="questions">
   <div class="card text-center">
-    <div class="card-header">Question 1/5</div>
+    <div class="card-header">
+      Question {{ currentQuestion + 1 }}/{{ questions.length }}
+    </div>
     <div class="card-body">
-      <h5 class="card-title">Who is the president of India?</h5>
+      <h5 class="card-title">{{ questions[currentQuestion].question }}</h5>
       <div class="container">
         <div class="row">
           <div class="col m-3">
-            <button class="btn btn-outline-secondary">Option 1</button>
+            <button
+              class="btn"
+              [class]="styles['1']"
+              (click)="onButtonClick(1)"
+            >
+              {{ questions[currentQuestion]["1"] }}
+            </button>
           </div>
           <div class="col m-3">
-            <button class="btn btn-outline-secondary">Option 2</button>
+            <button
+              class="btn"
+              [class]="styles['2']"
+              (click)="onButtonClick(2)"
+            >
+              {{ questions[currentQuestion]["2"] }}
+            </button>
           </div>
         </div>
         <div class="row">
           <div class="col m-3">
-            <button class="btn btn-outline-secondary">Option 3</button>
+            <button
+              class="btn"
+              [class]="styles['3']"
+              (click)="onButtonClick(3)"
+            >
+              {{ questions[currentQuestion]["3"] }}
+            </button>
           </div>
           <div class="col m-3">
-            <button class="btn btn-outline-secondary">Option 4</button>
+            <button
+              class="btn"
+              [class]="styles['4']"
+              (click)="onButtonClick(4)"
+            >
+              {{ questions[currentQuestion]["4"] }}
+            </button>
           </div>
         </div>
       </div>
-      <button class="btn btn-primary btn-sm float-right m-1">Next</button>
+      <button class="btn btn-primary float-right m-1" (click)="onClick()">
+        {{ next }}
+      </button>
     </div>
-    <div class="card-footer bg-transparent text-start">Tag</div>
+    <div class="card-footer bg-transparent text-start">
+      {{ questions[currentQuestion].tag }}
+    </div>
   </div>
 </div>

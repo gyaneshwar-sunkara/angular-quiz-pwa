@@ -1,6 +1,9 @@
 const express = require("express");
 const router = express.Router();
 
+// Auth middleware
+const { auth } = require("../../middleware/auth");
+
 // Question Data
 const questions = require("../../bin/questions.json");
 
@@ -21,8 +24,8 @@ function getRandom(arr, n) {
 
 // @route   GET api/questions
 // @desc    Get 5 random questions
-// @access  Public
-router.get("/", (req, res) => {
+// @access  Private
+router.get("/", auth, (req, res) => {
   return res.json({ questions: getRandom(questions, 5) });
 });
 
