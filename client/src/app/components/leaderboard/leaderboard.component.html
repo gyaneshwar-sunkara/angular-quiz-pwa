@@ -5,6 +5,7 @@
     <h1 class="h5">Did you make it to the TOP ?</h1>
     <h1 class="h5">Click on Dashboard to retake the quiz</h1>
   </div>
+  <h1 class="font-weight-bold mb-3" *ngIf="!submissions">Loading...</h1>
   <div class="card m-3" *ngIf="submissions">
     <p class="display-5 m-3">Top Submissions</p>
     <div class="table-responsive">
