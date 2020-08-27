@@ -26,7 +26,7 @@ function getRandom(arr, n) {
 // @desc    Get 5 random questions
 // @access  Private
 router.get("/", auth, (req, res) => {
-  return res.json({ questions: getRandom(questions, 5) });
+  return res.json({ questions: getRandom(questions, 5), msg: "OK" });
 });
 
 module.exports = router;
