@@ -18,6 +18,7 @@ import { GenericNotFoundComponent } from './components/generic-not-found/generic
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { InstructionsComponent } from './components/instructions/instructions.component';
 import { AboutComponent } from './components/about/about.component';
+import { LeaderboardComponent } from './components/leaderboard/leaderboard.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { AboutComponent } from './components/about/about.component';
     DashboardComponent,
     InstructionsComponent,
     AboutComponent,
+    LeaderboardComponent,
   ],
   imports: [
     BrowserModule,

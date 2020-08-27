@@ -5,6 +5,7 @@ import { SigninComponent } from './components/signin/signin.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { GenericNotFoundComponent } from './components/generic-not-found/generic-not-found.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { LeaderboardComponent } from './components/leaderboard/leaderboard.component';
 import { InstructionsComponent } from './components/instructions/instructions.component';
 import { AboutComponent } from './components/about/about.component';
 
@@ -17,6 +18,11 @@ const routes: Routes = [
   {
     path: 'dashboard',
     component: DashboardComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'leaderboard',
+    component: LeaderboardComponent,
     canActivate: [AuthGuard],
   },
   {

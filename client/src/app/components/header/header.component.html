@@ -53,6 +53,14 @@
         <a
           class="nav-item nav-link text-center mb-1"
           *ngIf="userService.loggedIn()"
+          routerLink="/leaderboard"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          >Leaderboard</a
+        >
+        <a
+          class="nav-item nav-link text-center mb-1"
+          *ngIf="userService.loggedIn()"
           routerLink="/instructions"
           routerLinkActive="active"
           [routerLinkActiveOptions]="{ exact: true }"
@@ -68,7 +76,7 @@
         <button
           (click)="logout()"
           *ngIf="userService.loggedIn()"
-          class="btn btn-danger mt-1 ml-1"
+          class="btn btn-danger ml-1 mr-1 mt-1"
         >
           Logout
         </button>
