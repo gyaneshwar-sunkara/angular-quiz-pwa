@@ -10,7 +10,7 @@ import { UserService } from './user.service';
 @Injectable({
   providedIn: 'root',
 })
-export class QuestionsService {
+export class SubmissionService {
   jwtHelperService: JwtHelperService = new JwtHelperService();
 
   constructor(
@@ -19,49 +19,55 @@ export class QuestionsService {
     private userService: UserService
   ) {}
 
-  setQuestions(questions) {
-    localStorage.setItem('questions', JSON.stringify(questions));
+  setCurrentScore(score) {
+    localStorage.setItem('currentScore', score);
   }
 
-  getQuestions() {
-    return JSON.parse(localStorage.getItem('questions'));
+  getCurrentScore() {
+    return parseInt(localStorage.getItem('currentScore'));
   }
 
-  removeQuestions() {
-    localStorage.removeItem('questions');
+  removeCurrentScore() {
+    localStorage.removeItem('currentScore');
   }
 
-  setCurrentQuestion(n) {
-    localStorage.setItem('currentQuestion', n);
+  setCurrentSubmission(id) {
+    localStorage.setItem('currentSubmission', id);
   }
 
-  getCurrentQuestion() {
-    return parseInt(localStorage.getItem('currentQuestion'));
+  getCurrentSubmission() {
+    return localStorage.getItem('currentSubmission');
   }
 
-  removeCurrentQuestion() {
-    localStorage.removeItem('currentQuestion');
+  removeCurrentSubmission() {
+    localStorage.removeItem('currentSubmission');
   }
 
-  setScore(score) {
-    localStorage.setItem('score', score);
-  }
-
-  getScore() {
-    return parseInt(localStorage.getItem('score'));
-  }
-
-  removeScore() {
-    localStorage.removeItem('score');
-  }
-  readQuestions(): Observable<any> {
+  createSubmission(score): Observable<any> {
     let httpHeaders = new HttpHeaders({
       'Content-Type': 'application/json',
       'x-auth-token': this.userService.getToken(),
     });
 
     return this.httpClient
-      .get('/api/questions', {
+      .post(
+        '/api/submissions',
+        { score },
+        {
+          headers: httpHeaders,
+        }
+      )
+      .pipe(catchError(this.errorHandler()));
+  }
+
+  readSubmissions(): Observable<any> {
+    let httpHeaders = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'x-auth-token': this.userService.getToken(),
+    });
+
+    return this.httpClient
+      .get('/api/submissions', {
         headers: httpHeaders,
       })
       .pipe(catchError(this.errorHandler()));

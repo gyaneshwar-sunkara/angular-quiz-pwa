@@ -29,7 +29,7 @@ exports.Create = (req, res) => {
           debug(err);
           return res.status(400).json({ msg: "Unexpected Error" });
         }
-        res.json({ submission: { id: _id }, msg: "OK" });
+        res.json({ submission: { id: submission._id }, msg: "OK" });
       });
     })
     .catch((err) => {
@@ -42,7 +42,7 @@ exports.Create = (req, res) => {
 exports.Read = (req, res) => {
   Submission.find()
     .select("-userid")
-    .sort({ score: 1, timestamp: -1 })
+    .sort({ score: -1, timestamp: -1 })
     .then((submissions) => {
       res.json({ submissions, msg: "OK" });
     })

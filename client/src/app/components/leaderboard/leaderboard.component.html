@@ -1,1 +1,36 @@
-<p>leaderboard works!</p>
+<div class="d-flex row text-center justify-content-center">
+  <div class="card m-3" *ngIf="currentScore">
+    <h1 class="display-5">Your Score</h1>
+    <h1 class="display-6">{{ currentScore }}</h1>
+    <h1 class="h5">Did you make it to the TOP ?</h1>
+    <h1 class="h5">Click on Dashboard to retake the quiz</h1>
+  </div>
+  <div class="card m-3" *ngIf="submissions">
+    <p class="display-5 m-3">Top Submissions</p>
+    <div class="table-responsive">
+      <table class="table">
+        <thead class="table-dark">
+          <tr>
+            <th scope="col">Rank</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Score</th>
+            <th scope="col">Time</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            *ngFor="let s of submissions; let i = index"
+            [ngClass]="{ 'table-info': s._id === currentSubmission }"
+          >
+            <td>{{ i + 1 }}</td>
+            <td>{{ s.firstname }}{{ " " }}{{ s.lastname }}</td>
+            <td>{{ s.email }}</td>
+            <td>{{ s.score }}</td>
+            <td>{{ s.timestamp | date: "medium" }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

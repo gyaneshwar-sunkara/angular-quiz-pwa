@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { QuestionsService } from '../../services/questions.service';
+import { SubmissionService } from '../../services/submission.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -22,6 +23,7 @@ export class DashboardComponent implements OnInit {
 
   constructor(
     private questionsService: QuestionsService,
+    private submissionService: SubmissionService,
     private router: Router
   ) {}
 
@@ -36,6 +38,8 @@ export class DashboardComponent implements OnInit {
           this.questions = data.questions;
           this.currentQuestion = 0;
           this.score = 0;
+          this.submissionService.removeCurrentScore();
+          this.submissionService.removeCurrentSubmission();
         }
       });
     } else {
@@ -68,8 +72,15 @@ export class DashboardComponent implements OnInit {
 
   onClick() {
     if (this.currentQuestion + 1 == this.questions.length) {
-      // this.questionsService.removeQuestions();
-      this.router.navigate(['/leaderboard']);
+      this.submissionService.createSubmission(this.score).subscribe((data) => {
+        this.submissionService.setCurrentScore(this.score);
+        this.submissionService.setCurrentSubmission(data.submission.id);
+        this.questionsService.removeQuestions();
+        this.questionsService.removeCurrentQuestion();
+        this.questionsService.removeScore();
+        this.router.navigate(['/leaderboard']);
+        console.log(data);
+      });
     } else {
       if (this.currentQuestion + 2 == this.questions.length) {
         this.next = 'Submit';
